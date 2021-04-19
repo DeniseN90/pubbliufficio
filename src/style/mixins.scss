@@ -1,0 +1,56 @@
+@import "./variables.scss";
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  filter: alpha(opacity=($opacity * 100));
+}
+
+@mixin transition($x...) {
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -ms-transition: $x;
+  -o-transition: $x;
+  transition: $x;
+}
+
+@mixin maximize {
+  padding: 0;
+  margin: 0;
+}
+
+
+@mixin bp-sm-mobile-xs {
+  @media screen and (max-width: $bp-sm-mobile-xs) {
+    @content;
+  }
+}
+
+@mixin bp-mobile-sm {
+  @media screen and (max-width: $bp-mobile-sm) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media screen and (max-width: $bp-pixel-md) {
+    @content;
+  }
+}
+
+@mixin bp-tablet-lg {
+  @media screen and (max-width: $bp-tablet-lg) {
+    @content;
+  }
+}
+
+@mixin bp-bg-tablet-xl {
+  @media screen and (max-width: $bp-bg-tablet-xl) {
+    @content;
+  }
+}
+
+@mixin bp-laptop-xxl {
+  @media screen and (max-width: $bp-laptop-xxl) {
+    @content;
+  }
+}
