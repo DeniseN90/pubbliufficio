@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import Home from './components/Home'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom'
+import DoveSiamo from './components/DoveSiamo';
+import LeNostreLavorazioni from './components/LeNostreLavorazioni';
+import Footer from './components/Footer';
+import Contattaci from './components/Contattaci';
+import { useSelector } from "react-redux";
+
 
 function App() {
+  const isMobile = useSelector((state) => state.isMobile);  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='container-fluid App'>
+        <div className={isMobile ? 'row' : "row mb-4"}>
+          <Header></Header>
+        </div>
+        <div className='row'>
+          <Switch>
+            <Route path="/dove-siamo" component={DoveSiamo} />
+            <Route path="/contattaci" component={Contattaci} />
+            <Route path="/le-nostre-lavorazioni" component={LeNostreLavorazioni} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </div>
+        <div className='row mt-4'>
+          <Footer></Footer>
+        </div>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+
+// TODO contattaci diventa un popup su mobile
