@@ -3,6 +3,12 @@
 @import "./style/variables.scss";
 @import "./style/mixins.scss";
 
+html,
+body
+{
+  min-height: 100vh;
+}
+
 html {
   overflow-x: hidden;
   box-sizing: border-box;
@@ -14,7 +20,7 @@ html {
 
     margin: 0 auto;
     padding: 0;
-    font-family: "Shippori Mincho B1", serif;
+    font-family: "Noto Sans JP", sans-serif;
     .App {
       .Header {
         justify-content: center;
@@ -73,12 +79,28 @@ html {
               display: none;
             }
           }
+          .Menu-item-mobile-closed {
+            width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0;
+            transition: visibility 0s, opacity 0.5s, height 1s ease-in-out;
+          }
           .Menu-item-mobile {
-            display: none;
+            max-height: 3rem;
+            visibility: visible;
+            opacity: 1;
+            width: 100%;
+            &:active {
+              text-decoration: underline;
+            }
           }
           @include mobile-only {
             justify-content: center;
             height: 100%;
+          }
+          @include bp-tablet-lg {
+            padding: 0 1.5rem 0 1.5rem;
           }
         }
         @include mobile-only {
@@ -105,21 +127,47 @@ html {
     .Main {
       max-width: 80%;
       margin: 0 auto;
-      .mobile {
-        &.row {
-          position: relative;
-          .Home-image-mobile {
-            opacity: 0.3;
-            border-radius: 3%;
-          }
-          &:focus {
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-              rgba(0, 0, 0, 0.12) 0px -12px 30px,
-              rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      margin-bottom: 2rem;
+      .Mobile-card-container {
+        min-height: 10rem;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 8%;
+        padding-top: 1rem;
+        .mobile {
+          &.row {
+            .mobile {
+              &.title {
+                text-transform: uppercase;
+                text-align: center;
+                @include bp-sm-mobile-xs {
+                  font-size: 1.5rem;
+                  text-transform: uppercase;
+                }
+              }
+              .title-hidden {
+                display: none;
+              }
+              .card-open {
+                text-align: justify;
+                margin: 0;
+              }
+
+              .card-closed {
+                display: none;
+              }
+            }
+            &.arrow {
+              justify-content: flex-end;
+            }
           }
         }
       }
+
       .Home-image {
         outline: 0 0 2px $light-blue;
 
@@ -129,51 +177,51 @@ html {
         }
       }
 
-      .col {
-        &.mobile {
-          position: absolute;
-          top: 10%;
-          div {
-            .card-toggle {
-              position: absolute;
-              right: 7%;
-              bottom: 0%;
-            }
-          }
-          &.title {
-            top: 40%;
-
-            @include bp-sm-mobile-xs {
-              font-size: 1.5rem;
-              text-transform: uppercase;
-            }
-          }
-          .title-hidden {
-            display: none;
-          }
-          .card-open {
-            text-align: justify;
-            margin: 0;
-          }
-          .arrow {
-            display: flex;
-            justify-content: flex-end;
-            position: absolute;
-            right: 0px;
-          }
-          .card-closed {
-            display: none;
-          }
-        }
-      }
-
       @include bp-sm-mobile-xs {
         max-width: 100%;
       }
     }
+    .Main-page {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      h3 {
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      iframe {
+        min-width: 100%;
+        min-height: 18rem;
+      }
+      form {
+        text-align: center;
+
+        label {
+          width: 80%;
+          text-align: left;
+        }
+        textarea {
+          width: 80%;
+        }
+        input { 
+          width: 80%;
+          margin: 0 auto;
+          margin-bottom: 1rem;
+          &.submit-button {
+            border-radius: 8px;
+          }
+        }
+        
+      }
+      .form-submitted-message {
+        text-align: center;
+      }
+     
+    }
     .Footer {
-      min-height: 3rem;
+      min-height: 2rem;
       background-color: #648591;
+      position: absolute;
+      bottom: 0;
     }
   }
 }
