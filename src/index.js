@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import configureStore from "./redux/configureStore";
 import { Provider } from "react-redux";
-import { Suspense, lazy } from 'react';
 
 const store = configureStore();
 
