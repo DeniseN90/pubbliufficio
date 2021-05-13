@@ -36,5 +36,3 @@ function App() {
 }
 
 export default App;
-
-// TODO contattaci diventa un popup su mobile
