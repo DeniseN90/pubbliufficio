@@ -26,14 +26,6 @@ function Menu() {
 
   const dispatch = useDispatch();
 
-  const menuItems = [
-    {value: 'Contattaci', link: '/contattaci'},
-    {value: 'Le nostre lavorazioni', link: '/le-nostre-lavorazioni'},
-    {value: 'Dove Siamo', link: '/dove-siamo'},
-]
-
-
-
   return (
     <div>
       <div className="row Menu">
@@ -71,8 +63,8 @@ function Logo() {
       className="Logo-image"
       alt="logo"
       src={isMobile ? logoMobile : logo}
-      onMouseOver={isMobile ? logoMobile : (e) => (e.currentTarget.src = logoInverted)}
-      onMouseLeave={isMobile ? logoMobile : (e) => (e.currentTarget.src = logo)}
+      onMouseOver={isMobile ? null : (e) => (e.currentTarget.src = logoInverted)}
+      onMouseLeave={isMobile ? null : (e) => (e.currentTarget.src = logo)}
     ></img>
   );
 }

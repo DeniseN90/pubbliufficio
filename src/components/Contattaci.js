@@ -1,45 +1,81 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsFormSubmitted } from "../redux/pubbliufficio-store";
 
 function Contattaci() {
+  const dotenv = require('dotenv')
+  dotenv.config();
   const dispatch = useDispatch();
   const isFormSubmitted = useSelector((state) => state.isFormSubmitted);
   const [contatto, setContatto] = useState("");
   const [messaggio, setMessaggio] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    dispatch(setIsFormSubmitted(true));
+  const handleSubmit = () => {
+    const scriptURL = process.env.ADDRESS;
+    const form = document.forms["pubbliufficio-form"];
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        .then((response) => {
+          console.log("Success!", response);
+          dispatch(setIsFormSubmitted(true));
+          setMessaggio("");
+          setContatto("");
+        })
+        .catch((error) => console.error("Error!", error.message));
+    });
   };
+
   const handleChange = (event) => {
     event.currentTarget.name === "contatto"
       ? setContatto(event.currentTarget.value)
       : setMessaggio(event.currentTarget.value);
   };
 
+  useEffect(() => {
+    dispatch(setIsFormSubmitted(false));
+    handleSubmit();
+  }, []);
+
   return (
     <div className="container Main-page">
-      {!isFormSubmitted && <form onSubmit={handleSubmit}>
-        <label>Contatto</label>
-        <input
-          name="contatto"
-          type="text"
-          value={contatto}
-          onChange={handleChange}
-        />
-        <label>Messaggio</label>
-        <textarea
-          name="messaggio"
-          type="text"
-          value={messaggio}
-          onChange={handleChange}
-        ></textarea>
+      {!isFormSubmitted && (
+        <form name="pubbliufficio-form">
+          <label>Contatto</label>
+          <input
+            required
+            name="contatto"
+            type="text"
+            value={contatto}
+            onChange={handleChange}
+          />
+          <label>Messaggio</label>
+          <textarea
+            name="messaggio"
+            type="text"
+            value={messaggio}
+            onChange={handleChange}
+          ></textarea>
 
-        <input className="submit-button" type="submit" value="Submit" />
-      </form>}
-      {isFormSubmitted && <div className="form-submitted-message">
-          Grazie per averci conttattati, verrai ricontattato al più presto</div>}
+          <input className="submit-button mt-4" type="submit" value="Invia" />
+        </form>
+      )}
+      {isFormSubmitted && (
+        <div className="Form-submitted">
+          <div className="Form-submitted-message mb-4">
+            Grazie per averci conttattati, verrai ricontattato al più presto
+          </div>
+          <div>
+            <button
+              className="Back-to-form mt-4"
+              onClick={() => dispatch(setIsFormSubmitted(false))}
+            >
+              Torna al form
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

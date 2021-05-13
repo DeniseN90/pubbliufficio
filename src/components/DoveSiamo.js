@@ -27,7 +27,7 @@ function DoveSiamo() {
             <iframe
               title="pubblufficio-map"
               src="https://maps.google.com/maps?q=via%20pezze%20di%20ninfa%2013,%20Cori&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              frameborder="0"
+              frameBorder="0"
               marginheight="0"
               marginwidth="0"
             ></iframe>
@@ -39,7 +39,7 @@ function DoveSiamo() {
           <iframe
             title="pubblufficio-map"
             src="https://maps.google.com/maps?q=via%20pezze%20di%20ninfa%2013,%20Cori&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
           ></iframe>
         </div>

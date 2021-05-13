@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { IoMdArrowDropright } from "react-icons/io";
 
-function HomeCard({ content }) {
+function HomeCard({ content, reverse  }) {
   const isMobile = useSelector((state) => state.isMobile);
   const [isCardOpen, setIsCardOpen] = useState(false);
 
   return (
     <div onClick={isMobile ? () => setIsCardOpen(!isCardOpen) : null}>
       {!isMobile && (
-        <div className="row text-left mb-4 mt-4">
+        <div
+          className={
+            reverse
+              ? "row text-left mb-4 mt-4 Row-reverse"
+              : "row text-left mb-4 mt-4"
+          }
+        >
           <div className="col-5">
             <img
               alt="pubbliufficio-spiralatura"
@@ -52,13 +58,13 @@ function HomeCard({ content }) {
         </div>
       )}
       {isMobile && (
-        <div className="Mobile-card-container container-fluid mt-4" style={{
-          backgroundImage: `url('${content.image}')`,
-        }}>
-          <div
-            className="mobile row"
-            
-          >
+        <div
+          className="Mobile-card-container container-fluid mt-4"
+          style={{
+            backgroundImage: `url('${content.image}')`,
+          }}
+        >
+          <div className="mobile row">
             <div className={isCardOpen ? "col mobile" : "col mobile title"}>
               <h3 className={isCardOpen ? "title-hidden" : "title"}>
                 {content.title}
@@ -67,14 +73,13 @@ function HomeCard({ content }) {
                 {content.description}
               </p>
             </div>
-            
           </div>
           <div className="arrow mobile row">
-              <span>
-                {" "}
-                <IoMdArrowDropright size={45} />
-              </span>
-            </div>
+            <span>
+              {" "}
+              <IoMdArrowDropright size={45} />
+            </span>
+          </div>
         </div>
       )}
     </div>
