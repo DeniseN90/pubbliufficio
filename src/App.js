@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 
 function App() {
   const isMobile = useSelector((state) => state.isMobile);
+  
   return (
     <Router>
       <div className="container-fluid App">
