@@ -10,10 +10,16 @@ function Contattaci() {
   const [contatto, setContatto] = useState("");
   const [messaggio, setMessaggio] = useState("");
 
-  const handleSubmit = () => {
+  const handleChange = (event) => {
+    event.currentTarget.name === "contatto"
+      ? setContatto(event.currentTarget.value)
+      : setMessaggio(event.currentTarget.value);
+  };
+
+  useEffect(() => {
+    dispatch(setIsFormSubmitted(false));
     const scriptURL = process.env.ADDRESS;
     const form = document.forms["pubbliufficio-form"];
-
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       fetch(scriptURL, { method: "POST", body: new FormData(form) })
@@ -25,18 +31,7 @@ function Contattaci() {
         })
         .catch((error) => console.error("Error!", error.message));
     });
-  };
-
-  const handleChange = (event) => {
-    event.currentTarget.name === "contatto"
-      ? setContatto(event.currentTarget.value)
-      : setMessaggio(event.currentTarget.value);
-  };
-
-  useEffect(() => {
-    dispatch(setIsFormSubmitted(false));
-    handleSubmit();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container Main-page">
