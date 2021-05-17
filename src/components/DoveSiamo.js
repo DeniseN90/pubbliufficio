@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Loader from "react-loader-spinner";
 
 function DoveSiamo() {
   const isMobile = useSelector((state) => state.isMobile);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(function () {
+      setIsLoading(false);
+    }, 1500);
+  }, []);
 
   return (
     <div className="container-fluid Main-page text-center">
@@ -23,25 +31,45 @@ function DoveSiamo() {
           </p>
         </div>
         {!isMobile && (
-          <div className="col">
-            <iframe
-              title="pubblufficio-map"
-              src="https://maps.google.com/maps?q=via%20pezze%20di%20ninfa%2013,%20Cori&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              frameBorder="0"
-              marginheight="0"
-              marginwidth="0"
-            ></iframe>
+          <div className="col Map">
+            {isLoading && (
+              <Loader
+                type="TailSpin"
+                color="#ae43d1"
+                height={100}
+                width={100}
+              ></Loader>
+            )}
+            {!isLoading && (
+              <iframe
+                title="pubblufficio-map"
+                src="https://maps.google.com/maps?q=via%20pezze%20di%20ninfa%2013,%20Cori&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameBorder="0"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+            )}
           </div>
         )}
       </div>
       {isMobile && (
-        <div className="row mb-2">
-          <iframe
-            title="pubblufficio-map"
-            src="https://maps.google.com/maps?q=via%20pezze%20di%20ninfa%2013,%20Cori&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            frameBorder="0"
-            scrolling="no"
-          ></iframe>
+        <div className="col Map">
+          {isLoading && (
+            <Loader
+              type="TailSpin"
+              color="#ae43d1"
+              height={100}
+              width={100}
+            ></Loader>
+          )}
+          {!isLoading && (
+            <iframe
+              title="pubblufficio-map"
+              src="https://maps.google.com/maps?q=via%20pezze%20di%20ninfa%2013,%20Cori&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameBorder="0"
+              scrolling="no"
+            ></iframe>
+          )}
         </div>
       )}
     </div>
