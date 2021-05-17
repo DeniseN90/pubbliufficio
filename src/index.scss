@@ -4,8 +4,7 @@
 @import "./style/mixins.scss";
 
 html,
-body
-{
+body {
   min-height: 100vh;
 }
 
@@ -56,9 +55,22 @@ html {
             }
             .Logo-image {
               max-width: 70%;
+              @include mobile-only {
+                border-radius: 15%;
+                &:hover {
+                  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                }
+
+
+              }
             }
             @include mobile-only {
               max-width: 35%;
+              
             }
             @include bp-sm-mobile-xs {
               max-width: 40%;
@@ -201,13 +213,12 @@ html {
           text-align: left;
           text-transform: uppercase;
           font-weight: bold;
-          letter-spacing: .15rem;
-
+          letter-spacing: 0.15rem;
         }
         textarea {
           width: 80%;
         }
-        input { 
+        input {
           width: 80%;
           margin: 0 auto;
           margin-bottom: 1rem;
@@ -219,7 +230,6 @@ html {
           font-size: 1.5rem;
           text-transform: uppercase;
         }
-        
       }
       .Form-submitted {
         text-align: center;
@@ -228,9 +238,7 @@ html {
       }
 
       .Back-to-form {
-        
       }
-     
     }
     .Footer {
       min-height: 2rem;
