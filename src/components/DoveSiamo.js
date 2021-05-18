@@ -9,7 +9,7 @@ function DoveSiamo() {
   useEffect(() => {
     setTimeout(function () {
       setIsLoading(false);
-    }, 1500);
+    }, 1800);
   }, []);
 
   return (

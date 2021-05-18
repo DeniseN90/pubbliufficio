@@ -7,10 +7,9 @@ import Footer from "./components/Footer";
 import Contattaci from "./components/Contattaci";
 import { useSelector } from "react-redux";
 
-
 function App() {
   const isMobile = useSelector((state) => state.isMobile);
-  
+
   return (
     <Router>
       <div className="container-fluid App">
@@ -30,6 +29,17 @@ function App() {
         </div>
         <div className="row mt-4">
           <Footer></Footer>
+        </div>
+        <div>
+          {/* WhatsApp icon */}
+          <a
+            href="https://wa.me/393382681254"
+            class="whatsapp_float"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-whatsapp whatsapp-icon"></i>
+          </a>
         </div>
       </div>
     </Router>

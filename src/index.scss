@@ -64,13 +64,10 @@ html {
                     rgba(0, 0, 0, 0.17) 0px 12px 13px,
                     rgba(0, 0, 0, 0.09) 0px -3px 5px;
                 }
-
-
               }
             }
             @include mobile-only {
               max-width: 35%;
-              
             }
             @include bp-sm-mobile-xs {
               max-width: 40%;
@@ -209,7 +206,7 @@ html {
           min-height: 18rem;
         }
       }
-      
+
       form {
         text-align: center;
         label {
@@ -250,8 +247,8 @@ html {
       position: absolute;
       bottom: 0;
       display: flex;
-      justify-content: center;     
-      
+      justify-content: center;
+
       .Copyright {
         align-self: center;
       }
@@ -269,4 +266,33 @@ html {
 
 .Row-reverse {
   flex-direction: row-reverse;
+}
+
+/* for desktop */
+.whatsapp_float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  @include mobile-only {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 10px;
+    font-size: 22px;
+  }
+  .whatsapp-icon {
+    margin-top: 16px;
+    @include mobile-only {
+      margin-top: 10px;
+    }
+  }
 }
