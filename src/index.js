@@ -10,11 +10,11 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 const store = configureStore();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <React.StrictMode>
       <App />
-    </Provider>
-  </React.StrictMode>,
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 
