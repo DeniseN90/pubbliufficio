@@ -38,5 +38,5 @@ jobs:
       env:
           AUTHOR: DeniseN90
           BUILD_PATH: public
-          GITHUB_PAGE_NAME: pubbliufficio.github.io
+          GITHUB_PAGE_NAME: pubbliufficio
           PA_TOKEN: ${{ secrets.PA_TOKEN }}
