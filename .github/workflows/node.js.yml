@@ -37,6 +37,6 @@ jobs:
       uses: awb-pw/deploy-to-github-pages-action@1.1.1
       env:
           AUTHOR: DeniseN90
-          BUILD_PATH: public
+          BUILD_PATH: static
           GITHUB_PAGE_NAME: pubbliufficio
           PA_TOKEN: ${{ secrets.PA_TOKEN }}
