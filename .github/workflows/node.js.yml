@@ -36,6 +36,8 @@ jobs:
     
     - name: Deploy your app to GitHub Pages
       uses: awb-pw/deploy-to-github-pages-action@1.1.1
-
-      
-      
+      env:
+          AUTHOR: DeniseN90
+          BUILD_PATH: public
+          GITHUB_PAGE_NAME: pubbliufficio.github.io
+          PA_TOKEN: ${{ secrets.PA_TOKEN }}
