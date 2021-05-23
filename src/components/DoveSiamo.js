@@ -16,7 +16,7 @@ function DoveSiamo() {
     <div className="container-fluid Main-page text-center">
       <div className="row">
         <div className="col">
-          <h3>Dove siamo</h3>
+          <h3 title='page-title'>Dove siamo</h3>
           <p>Via Pezze di Ninfa 13, Cori (LT)</p>
           <p>Contatti:</p>
           <p>

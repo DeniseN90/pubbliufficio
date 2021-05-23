@@ -36,6 +36,7 @@ function HomeCard({ content, reverse  }) {
               className={
                 isMobile ? (isCardOpen ? "title-hidden" : "title") : ""
               }
+              title='home-paragraph'
             >
               {content.title}
             </h3>
@@ -66,7 +67,7 @@ function HomeCard({ content, reverse  }) {
         >
           <div className="mobile row">
             <div className={isCardOpen ? "col mobile" : "col mobile title"}>
-              <h3 className={isCardOpen ? "title-hidden" : "title"}>
+              <h3 title='home-paragraph' className={isCardOpen ? "title-hidden" : "title"}>
                 {content.title}
               </h3>
               <p className={isCardOpen ? "card-open" : "card-closed"}>
