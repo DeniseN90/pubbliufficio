@@ -75,7 +75,7 @@ function Home() {
   ];
 
   return (
-    <div className={isMobile ? "" : "container"}>
+    <div className={isMobile ? "" : "container Home-page"}>
       <div className={isMobile ? "" : "mb-4"}>
         <ImageGallery
           items={images}

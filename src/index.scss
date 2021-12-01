@@ -22,13 +22,14 @@ html {
     font-family: "Noto Sans JP", sans-serif;
     .App {
       .Header {
+        position: fixed;
         justify-content: center;
         width: 100%;
         display: flex;
         background-color: #fff;
         min-height: 3rem;
         text-align: left;
-        z-index: 1;
+        z-index: 5;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
           rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
           rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -120,6 +121,9 @@ html {
       }
     }
 
+    .Home-page {
+      padding-top: 6rem;
+    }
     .image-gallery {
       button {
         @include mobile-only {
@@ -194,6 +198,10 @@ html {
     .Main-page {
       margin-top: 3rem;
       margin-bottom: 1rem;
+      padding-top: 2rem;
+      @include mobile-only {
+        padding-top: 5rem;
+      }
       h3 {
         font-weight: bold;
         margin-bottom: 1rem;

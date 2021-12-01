@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/pubbliufficio-logo.png";
+import logo from "../assets/images/pubbliufficio-logo-menu.png";
 import logoMobile from "../assets/images/pubbliufficio-logo-mobile.png";
-import logoInverted from "../assets/images/inverted-pubbliufficio-logo.png";
+import logoInverted from "../assets/images/inverted-pubbliufficio-logo-menu.png";
 import { useDispatch, useSelector } from "react-redux";
 import { GiHamburgerMenu }  from 'react-icons/gi';
 import { ImCross } from 'react-icons/im'
