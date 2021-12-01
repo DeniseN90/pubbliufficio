@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.67e8c03c.chunk.css",
-    "main.js": "/static/js/main.0a29a270.chunk.js",
-    "main.js.map": "/static/js/main.0a29a270.chunk.js.map",
+    "main.css": "/static/css/main.fe0db33d.chunk.css",
+    "main.js": "/static/js/main.adcdcb9e.chunk.js",
+    "main.js.map": "/static/js/main.adcdcb9e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b49ff1fd.js",
     "runtime-main.js.map": "/static/js/runtime-main.b49ff1fd.js.map",
     "static/css/2.ab75b8d7.chunk.css": "/static/css/2.ab75b8d7.chunk.css",
-    "static/js/2.62384ef9.chunk.js": "/static/js/2.62384ef9.chunk.js",
-    "static/js/2.62384ef9.chunk.js.map": "/static/js/2.62384ef9.chunk.js.map",
+    "static/js/2.ee597032.chunk.js": "/static/js/2.ee597032.chunk.js",
+    "static/js/2.ee597032.chunk.js.map": "/static/js/2.ee597032.chunk.js.map",
     "static/js/3.849a63d9.chunk.js": "/static/js/3.849a63d9.chunk.js",
     "static/js/3.849a63d9.chunk.js.map": "/static/js/3.849a63d9.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.ab75b8d7.chunk.css.map": "/static/css/2.ab75b8d7.chunk.css.map",
-    "static/css/main.67e8c03c.chunk.css.map": "/static/css/main.67e8c03c.chunk.css.map",
-    "static/js/2.62384ef9.chunk.js.LICENSE.txt": "/static/js/2.62384ef9.chunk.js.LICENSE.txt",
-    "static/media/inverted-pubbliufficio-logo.ccdee2a7.png": "/static/media/inverted-pubbliufficio-logo.ccdee2a7.png",
-    "static/media/pubbliufficio-logo-mobile.82e4426f.png": "/static/media/pubbliufficio-logo-mobile.82e4426f.png",
-    "static/media/pubbliufficio-logo.e870ffa3.png": "/static/media/pubbliufficio-logo.e870ffa3.png"
+    "static/css/main.fe0db33d.chunk.css.map": "/static/css/main.fe0db33d.chunk.css.map",
+    "static/js/2.ee597032.chunk.js.LICENSE.txt": "/static/js/2.ee597032.chunk.js.LICENSE.txt",
+    "static/media/inverted-pubbliufficio-logo-menu.40f34242.png": "/static/media/inverted-pubbliufficio-logo-menu.40f34242.png",
+    "static/media/pubbliufficio-logo-menu.48bcb5e5.png": "/static/media/pubbliufficio-logo-menu.48bcb5e5.png",
+    "static/media/pubbliufficio-logo-mobile.82e4426f.png": "/static/media/pubbliufficio-logo-mobile.82e4426f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b49ff1fd.js",
     "static/css/2.ab75b8d7.chunk.css",
-    "static/js/2.62384ef9.chunk.js",
-    "static/css/main.67e8c03c.chunk.css",
-    "static/js/main.0a29a270.chunk.js"
+    "static/js/2.ee597032.chunk.js",
+    "static/css/main.fe0db33d.chunk.css",
+    "static/js/main.adcdcb9e.chunk.js"
   ]
 }
