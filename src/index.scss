@@ -8,6 +8,17 @@ body {
   min-height: 100vh;
 }
 
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
 html {
   overflow-x: hidden;
   box-sizing: border-box;
@@ -198,7 +209,7 @@ html {
     .Main-page {
       margin-top: 3rem;
       margin-bottom: 1rem;
-      padding-top: 2rem;
+      padding-top: 5rem;
       @include mobile-only {
         padding-top: 5rem;
       }
