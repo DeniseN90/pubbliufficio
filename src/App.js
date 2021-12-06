@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Home from "./components/Home";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   useLocation,
