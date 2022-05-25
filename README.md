@@ -1,7 +1,7 @@
 # Pubbliufficio
 
 This project was created with Reactjs. 
-It's deployed with GitHub Pages on [https://pubbliufficio.com/](www.pubbliufficio.com)
+It's deployed with GitHub Pages on [https://pubbliufficio.com](https://pubbliufficio.com)
 
 ## Available Scripts
 
