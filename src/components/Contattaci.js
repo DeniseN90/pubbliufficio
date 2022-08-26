@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsFormSubmitted } from "../redux/pubbliufficio-store";
 
 function Contattaci() {
-  const dotenv = require('dotenv')
-  dotenv.config();
+  
+  //dotenv.config();
   const dispatch = useDispatch();
   const isFormSubmitted = useSelector((state) => state.isFormSubmitted);
   const [contatto, setContatto] = useState("");
@@ -18,7 +18,7 @@ function Contattaci() {
 
   useEffect(() => {
     dispatch(setIsFormSubmitted(false));
-    const scriptURL = process.env.ADDRESS;
+    const scriptURL = process.env.SCRIPT_URL;
     const form = document.forms["pubbliufficio-form"];
     form.addEventListener("submit", (e) => {
       e.preventDefault();

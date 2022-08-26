@@ -18,7 +18,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: test
+    - name: Generate .env file
       #run: echo ${{ env.SCRIPT_URL }}
       run: 'echo "$SCRIPT_URL" > .env'
       shell: bash
