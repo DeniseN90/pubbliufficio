@@ -18,6 +18,9 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - name: test
+      run: echo ${{ SCRIPT_URL }}
+
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
@@ -40,3 +43,4 @@ jobs:
           BUILD_PATH: public
           GITHUB_PAGE_NAME: pubbliufficio
           PA_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          SCRIPT_URL: ${{ secrets.SCRIPT_URL }}
