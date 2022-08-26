@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - name: test
-      run: echo ${{ SCRIPT_URL }}
+      run: echo ${{ env.SCRIPT_URL }}
 
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
