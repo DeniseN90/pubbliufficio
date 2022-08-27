@@ -21,7 +21,7 @@ jobs:
     - name: Generate .env file
       #run: echo ${{ env.SCRIPT_URL }}
       run:  |
-        'echo "$SCRIPT_URL" > .env'
+        echo "$SCRIPT_URL" > .env
         ls -la
         cat .env
       shell: bash
