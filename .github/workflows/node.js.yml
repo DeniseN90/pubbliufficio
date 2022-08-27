@@ -23,16 +23,16 @@ jobs:
       run: 'echo "$SCRIPT_URL" > .env'
       shell: bash
 
-    - name: setup git config
-      run: |
-        git config user.name "denisenanni"
-        git config user.email "info@devdenise.com"
-
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    
+    - name: setup git config
+      run: |
+        git config user.name "denisenanni"
+        git config user.email "info@devdenise.com"
         
     - name: Install dependencies
       run: npm install
