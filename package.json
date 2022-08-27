@@ -30,7 +30,7 @@
     "copy": "cp ./CNAME ./build/CNAME",
     "predeploy": "npm run build",
     "deploy": "node ./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d build",
-    "build": "react-scripts build",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
