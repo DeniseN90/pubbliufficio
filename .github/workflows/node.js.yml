@@ -50,8 +50,7 @@ jobs:
     - name: Deploy your app to GitHub Pages
       #uses: awb-pw/deploy-to-github-pages-action@1.1.1
       run:  |
-        ls -la
-        git config -list
+        git config --list
         npm run deploy
       env:
           AUTHOR: denisenanni
