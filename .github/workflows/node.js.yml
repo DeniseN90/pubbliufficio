@@ -39,7 +39,8 @@ jobs:
       run: npm run build
     
     - name: Deploy your app to GitHub Pages
-      uses: awb-pw/deploy-to-github-pages-action@1.1.1
+      #uses: awb-pw/deploy-to-github-pages-action@1.1.1
+      run: npm run deploy
       env:
           AUTHOR: denisenanni
           BUILD_PATH: public
