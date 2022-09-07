@@ -18,19 +18,20 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: Generate .env file
-      #run: echo ${{ env.SCRIPT_URL }}
-      run:  |
-        echo "$SCRIPT_URL" > .env
-        ls -la
-        cat .env
-      shell: bash
-
+  
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    
+    - name: Generate .env file
+      run:  |
+        echo ${{ secrets.SCRIPT_URL }}
+        echo ${{ secrets.SCRIPT_URL }} > .env
+        ls -la
+        cat .env
+      shell: bash
     
     - name: setup git config
       run: |
