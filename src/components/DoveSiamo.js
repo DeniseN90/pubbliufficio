@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Loader from "react-loader-spinner";
+import { Circles } from "react-loader-spinner";
 
 function DoveSiamo() {
   const isMobile = useSelector((state) => state.isMobile);
@@ -33,20 +33,22 @@ function DoveSiamo() {
         {!isMobile && (
           <div className="col Map">
             {isLoading && (
-              <Loader
-                type="TailSpin"
+              <Circles
+                ariaLabel="circles-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
                 color="#ae43d1"
                 height={100}
                 width={100}
-              ></Loader>
+              ></Circles>
             )}
             {!isLoading && (
               <iframe
                 title="pubblufficio-map"
                 src="https://maps.google.com/maps?q=via%20pezze%20di%20ninfa%2013,%20Cori&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 frameBorder="0"
-                marginheight="0"
-                marginwidth="0"
+                marginHeight="0"
+                marginWidth="0"
               ></iframe>
             )}
           </div>
@@ -55,12 +57,14 @@ function DoveSiamo() {
       {isMobile && (
         <div className="col Map">
           {isLoading && (
-            <Loader
-              type="TailSpin"
+            <Circles
+              ariaLabel="circles-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
               color="#ae43d1"
               height={100}
               width={100}
-            ></Loader>
+            ></Circles>
           )}
           {!isLoading && (
             <iframe

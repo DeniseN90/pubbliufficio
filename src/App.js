@@ -2,10 +2,11 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import {
   HashRouter as Router,
-  Switch,
+  Routes,
   Route,
   useLocation,
 } from "react-router-dom";
+//import { Routes } from "react-dom/client"
 import DoveSiamo from "./components/DoveSiamo";
 import LeNostreLavorazioni from "./components/LeNostreLavorazioni";
 import Footer from "./components/Footer";
@@ -13,8 +14,10 @@ import Contattaci from "./components/Contattaci";
 import { useSelector } from "react-redux";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { createBrowserHistory } from "history";
+import React, { useRef } from "react";
 
-function App() {
+
+export default function App() {
   const isMobile = useSelector((state) => state.isMobile);
 
 
@@ -45,30 +48,38 @@ function App() {
   );
 }
 
-function Content() {
+export function Content() {
   const history = createBrowserHistory();
   const location = useLocation();
+
+  const nodeRef = useRef(null)
   return (
     <div className="row">
-      <TransitionGroup className="container">
+      <TransitionGroup 
+        
+        className="container">
+          
         <CSSTransition
           timeout={300}
           classNames="fade"
           key={history.location.key}
+          nodeRef={nodeRef} 
         >
-          <Switch location={location}>
-            <Route path="/dove-siamo" component={DoveSiamo} />
-            <Route path="/contattaci" component={Contattaci} />
+          <div ref={nodeRef}>
+          <Routes location={location}>
+            <Route path="/dove-siamo" element={<DoveSiamo/>} />
+            <Route path="/contattaci" element={<Contattaci/>} />
             <Route
               path="/le-nostre-lavorazioni"
-              component={LeNostreLavorazioni}
+              element={<LeNostreLavorazioni/>}
             />
-            <Route path="/" component={Home} />
-          </Switch>
+            <Route path="/" element={<Home/>} />
+          </Routes>
+          </div>
         </CSSTransition>
       </TransitionGroup>
     </div>
   );
 }
 
-export default App;
+
