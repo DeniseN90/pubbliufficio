@@ -47,10 +47,12 @@ jobs:
       run: npm run build
     
     - name: Deploy your app to GitHub Pages
-      #uses: awb-pw/deploy-to-github-pages-action@1.1.1
+      # uses: awb-pw/deploy-to-github-pages-action@1.1.1
+      # git config --list
+      # git remote set-url origin https://git:${PA_TOKEN}@github.com/${GITHUB_PAGE_NAME}.git
       run:  |
-        git config --list
-        git remote set-url origin https://git:${PA_TOKEN}@github.com/${GITHUB_PAGE_NAME}.git
+        
+        
         npm run deploy
       env:
           AUTHOR: denisenanni
