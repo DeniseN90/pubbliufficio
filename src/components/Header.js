@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/pubbliufficio-logo-menu.png";
 import logoMobile from "../assets/images/pubbliufficio-logo-mobile.png";
-import logoInverted from "../assets/images/inverted-pubbliufficio-logo-menu.png";
 import { useDispatch, useSelector } from "react-redux";
 import { GiHamburgerMenu }  from 'react-icons/gi';
 import { ImCross } from 'react-icons/im'
@@ -24,33 +23,40 @@ function Menu() {
   const isMobile = useSelector((state) => state.isMobile);
   const isMenuOpen = useSelector((state) => state.isMenuOpen);
 
+  const menuItems = [
+    {
+      path: '/contattaci',
+      displayName: 'Contattaci'
+    }, 
+    {
+      path: '/i-nostri-lavori',
+      displayName: 'I nostri lavori'
+    }, {
+      path: '/dove-siamo',
+      displayName: 'Dove siamo'
+    }]
+
   const dispatch = useDispatch();
 
   return (
     <div>
       <div className="row Menu">
-        {isMobile && !isMenuOpen ? <div  className='col-2'><GiHamburgerMenu onClick={()=> dispatch(setIsMenuOpen(!isMenuOpen))}size={40}/></div> : null}
-        {isMobile && isMenuOpen ? <div className='col-2'><ImCross onClick={()=> dispatch(setIsMenuOpen(!isMenuOpen))} size={40}/></div> : null}
+        {isMobile && !isMenuOpen ? <div  className='col-2'><GiHamburgerMenu onClick={()=> dispatch(setIsMenuOpen(!isMenuOpen))}size={30}/></div> : null}
+        {isMobile && isMenuOpen ? <div className='col-2'><ImCross onClick={()=> dispatch(setIsMenuOpen(!isMenuOpen))} size={30}/></div> : null}
         <Link className="col Logo" to="/">
-          <Logo></Logo>
+          <Logo></Logo> 
         </Link>
         <Link className={isMobile ? 'Home ': "col Home"} to="/" onClick={()=> dispatch(setIsMenuOpen(false))}>
           {" "}
           Pubbliufficio{" "}
         </Link>
-
-        <Link className={isMobile ? (isMenuOpen ? 'Menu-item-mobile' : 'Menu-item-mobile-closed') : "col Menu-item"} to="/contattaci" onClick={()=> dispatch(setIsMenuOpen(false))}>
-          {" "}
-          Contattaci
-        </Link>
-        <Link className={isMobile ? isMenuOpen ? 'Menu-item-mobile' : 'Menu-item-mobile-closed' : "col Menu-item"}  to="/le-nostre-lavorazioni" onClick={()=> dispatch(setIsMenuOpen(false))}>
-          {" "}
-          Le nostre lavorazioni
-        </Link>
-        <Link className={isMobile ? isMenuOpen ? 'Menu-item-mobile' : 'Menu-item-mobile-closed' : "col Menu-item"}  to="/dove-siamo" onClick={()=> dispatch(setIsMenuOpen(false))}>
-          {" "}
-          Dove siamo
-        </Link>
+        {menuItems.map(( item, index ) => (
+                <Link key={index} className={isMobile ? (isMenuOpen ? 'Menu-item-mobile' : 'Menu-item-mobile-closed') : "col Menu-item"} to={item.path} onClick={()=> dispatch(setIsMenuOpen(false))}>
+                {" "}
+                {item.displayName}
+                </Link>
+          ))}
+        
       </div>
     </div>
   );
@@ -63,8 +69,6 @@ function Logo() {
       className="Logo-image"
       alt="logo"
       src={isMobile ? logoMobile : logo}
-      onMouseOver={isMobile ? null : (e) => (e.currentTarget.src = logoInverted)}
-      onMouseLeave={isMobile ? null : (e) => (e.currentTarget.src = logo)}
     ></img>
   );
 }

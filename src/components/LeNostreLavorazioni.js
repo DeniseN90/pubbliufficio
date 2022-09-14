@@ -5,7 +5,7 @@ function LeNostreLavorazioni() {
     <div className="container Main-page">
       <div className="row">
         <div className="col">
-          <h3 title='page-title'>Le nostre lavorazioni</h3>
+          <h3 title='page-title'>I nostri lavori</h3>
           <h4>Allestimento</h4>
           <p>
             Eseguiamo lavoro di allestimento su calendari, blocchi e qualsiasi

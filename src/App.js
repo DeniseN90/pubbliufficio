@@ -6,14 +6,12 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-//import { Routes } from "react-dom/client"
 import DoveSiamo from "./components/DoveSiamo";
 import LeNostreLavorazioni from "./components/LeNostreLavorazioni";
 import Footer from "./components/Footer";
 import Contattaci from "./components/Contattaci";
 import { useSelector } from "react-redux";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { createBrowserHistory } from "history";
 import React, { useRef } from "react";
 
 
@@ -49,7 +47,6 @@ export default function App() {
 }
 
 export function Content() {
-  const history = createBrowserHistory();
   const location = useLocation();
 
   const nodeRef = useRef(null)
@@ -60,9 +57,9 @@ export function Content() {
         className="container">
           
         <CSSTransition
-          timeout={300}
+          timeout={2000}
           classNames="fade"
-          key={history.location.key}
+          key={location.key}
           nodeRef={nodeRef} 
         >
           <div ref={nodeRef}>
@@ -70,7 +67,7 @@ export function Content() {
             <Route path="/dove-siamo" element={<DoveSiamo/>} />
             <Route path="/contattaci" element={<Contattaci/>} />
             <Route
-              path="/le-nostre-lavorazioni"
+              path="/i-nostri-lavori"
               element={<LeNostreLavorazioni/>}
             />
             <Route path="/" element={<Home/>} />

@@ -49,15 +49,17 @@ html {
           align-content: center;
           a {
             color: #5c5c5c;
-            text-decoration: none;
+            text-decoration: underline transparent;
+            text-underline-offset: 0.2em;
             text-transform: uppercase;
             font-weight: 800;
             line-height: 3rem;
             text-align: center;
-            @include transition(background-color, 1s);
-            @include transition(color, 1s);
+            @include transition(text-decoration-color 400ms);
+
             &:hover {
-              text-decoration: underline;
+              text-decoration-color: initial;
+              
             }
           }
           a.Logo {
@@ -94,7 +96,6 @@ html {
             @include bp-sm-mobile-xs {
               text-align: start;
             }
-
           }
 
           .Menu-item {
@@ -107,13 +108,14 @@ html {
             visibility: hidden;
             opacity: 0;
             max-height: 0;
-            transition: visibility 0s, opacity 0.5s, height 1s ease-in-out;
+            transition: opacity .5s, max-height .8s, visibility .8s ease-in-out;
           }
           .Menu-item-mobile {
             max-height: 3rem;
             visibility: visible;
             opacity: 1;
             width: 100%;
+            transition: opacity 0.5s, max-height 0.8s, visibility .8s ease-in-out;
             &:active {
               text-decoration: underline;
             }
