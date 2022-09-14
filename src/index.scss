@@ -94,6 +94,7 @@ html {
             @include bp-sm-mobile-xs {
               text-align: start;
             }
+
           }
 
           .Menu-item {
@@ -136,7 +137,14 @@ html {
       padding-top: 6rem;
     }
     .image-gallery {
+      .image-gallery-right-nav {
+        right: -42px;
+      }
+      .image-gallery-left-nav {
+        left: -42px;
+      }
       button {
+        
         @include mobile-only {
           display: none;
         }
