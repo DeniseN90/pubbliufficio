@@ -25,8 +25,7 @@ const images = [
 
 function Home() {
   const isMobile = useSelector((state) => state.isMobile);
-  require('dotenv').config();
-  console.log(process.env);
+
 
   const renderHomeContents = () => {
     const homeContent = isMobile ? mobileContents : desktopContents;
