@@ -22,7 +22,7 @@ export default function App() {
 
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="container-fluid App">
         <div className={isMobile ? "row" : "row mb-4"}>
           <Header></Header>
