@@ -9,7 +9,7 @@ function DoveSiamo() {
   useEffect(() => {
     setTimeout(function () {
       setIsLoading(false);
-    }, 1800);
+    }, 2000);
   }, []);
 
   return (
@@ -36,7 +36,7 @@ function DoveSiamo() {
               <Circles
                 ariaLabel="circles-loading"
                 wrapperStyle={{}}
-                wrapperClass=""
+                wrapperClass="loader"
                 color="#ae43d1"
                 height={100}
                 width={100}
