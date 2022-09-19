@@ -63,7 +63,7 @@ html {
             }
           }
           a {
-            .Logo {
+            &.Logo {
               @include maximize;
               &:hover {
                 background-color: #fff;
