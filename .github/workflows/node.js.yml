@@ -47,13 +47,13 @@ jobs:
       run: npm run build
     
     - name: Deploy your app to GitHub Pages
-      uses: awb-pw/deploy-to-github-pages-action@1.1.1
+      uses: awibox/deploy-to-github-pages-action@master
     
       # git config --list
       # git remote set-url origin https://git:${PA_TOKEN}@github.com/${GITHUB_PAGE_NAME}.git
       env:
           AUTHOR: denisenanni
           BUILD_PATH: build
-          GITHUB_PAGE_NAME: pubbliufficio
+          GITHUB_PAGE_NAME: pubbliufficio.com
           PA_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           SCRIPT_URL: ${{ secrets.SCRIPT_URL }}
