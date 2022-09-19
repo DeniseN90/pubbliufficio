@@ -53,7 +53,7 @@ jobs:
       # git remote set-url origin https://git:${PA_TOKEN}@github.com/${GITHUB_PAGE_NAME}.git
       env:
           AUTHOR: denisenanni
-          BUILD_PATH: public
+          BUILD_PATH: build
           GITHUB_PAGE_NAME: pubbliufficio
           PA_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           SCRIPT_URL: ${{ secrets.SCRIPT_URL }}
