@@ -54,6 +54,6 @@ jobs:
       env:
           AUTHOR: denisenanni
           BUILD_PATH: build
-          GITHUB_PAGE_NAME: denisenanni/pubbliufficio
+          GITHUB_PAGE_NAME: pubbliufficio
           PA_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           SCRIPT_URL: ${{ secrets.SCRIPT_URL }}
