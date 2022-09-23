@@ -1,27 +1,6 @@
 import React from "react";
-import ImageGallery from "react-image-gallery";
 import { useSelector } from "react-redux";
 import HomeCard from "./HomeCard";
-
-const images = [
-  {
-    original:
-      "https://images-pubbliufficio.s3.eu-south-1.amazonaws.com/paper.jpg",
-  },
-  {
-    original:
-      "https://images-pubbliufficio.s3.eu-south-1.amazonaws.com/paper2.jpg",
-  },
-  {
-    original:
-      "https://images-pubbliufficio.s3.eu-south-1.amazonaws.com/particolare-calendario.jpg"
-  },
-];
-
-
-  
-
-
 
 function Home() {
   const isMobile = useSelector((state) => state.isMobile);
@@ -77,15 +56,7 @@ function Home() {
 
   return (
     <div className={isMobile ? "" : "container Home-page"}>
-      <div className={isMobile ? "container-mob Home-page" : "mb-4"}>
-        <ImageGallery
-          items={images}
-          showThumbnails={false}
-          showFullscreenButton={false}
-          autoPlay={true}
-          showPlayButton={false}
-        />
-      </div>
+
 
       <div className="row Main">
         {renderHomeContents()}

@@ -59,7 +59,7 @@ function Contattaci() {
       {isFormSubmitted && (
         <div className="Form-submitted">
           <div className="Form-submitted-message mb-4">
-            Grazie per averci conttattati, verrai ricontattato al più presto
+            Grazie per averci scritto, verrai ricontattato al più presto
           </div>
           <div>
             <button

@@ -39,8 +39,8 @@ function Menu() {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <div className="row Menu">
+
+      <div className={isMobile ? 'row Menu mob p-2': "row Menu"}>
         {isMobile && !isMenuOpen ? <div  className='col-2'><GiHamburgerMenu onClick={()=> dispatch(setIsMenuOpen(!isMenuOpen))}size={30}/></div> : null}
         {isMobile && isMenuOpen ? <div className='col-2'><ImCross onClick={()=> dispatch(setIsMenuOpen(!isMenuOpen))} size={30}/></div> : null}
         <Link className="col Logo" to="/">
@@ -58,7 +58,6 @@ function Menu() {
           ))}
         
       </div>
-    </div>
   );
 }
 

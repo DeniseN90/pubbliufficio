@@ -6,6 +6,7 @@
 html,
 body {
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 .fade-enter {
@@ -30,29 +31,41 @@ html {
 
     margin: 0 auto;
     padding: 0;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     .App {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 0;
+      .image-container {
+        position: relative;
+        @include desktop-only {
+          bottom: 236px;
+        }
+        img {
+          width: 100%;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+      
       .Header {
-        position: fixed;
-        justify-content: center;
-        width: 100%;
-        display: flex;
-        background-color: #fff;
-        min-height: 3rem;
-        text-align: left;
-        z-index: 5;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
         .Menu {
           align-items: center;
           align-content: center;
           a {
-            color: #5c5c5c;
+            color: #000;
             text-decoration: underline transparent;
             text-underline-offset: 0.2em;
             text-transform: uppercase;
-            font-weight: 800;
             line-height: 3rem;
             text-align: center;
             @include transition(text-decoration-color 400ms);
@@ -65,20 +78,12 @@ html {
           a {
             &.Logo {
               @include maximize;
-              &:hover {
-                background-color: #fff;
-              }
               .Logo-image {
                 max-width: 70%;
+                background-color: rgba(200, 200, 200, 0.5);
+                border-radius: 7%;
                 @include mobile-only {
-                  border-radius: 15%;
-                  &:hover {
-                    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-                      rgba(0, 0, 0, 0.12) 0px -12px 30px,
-                      rgba(0, 0, 0, 0.12) 0px 4px 6px,
-                      rgba(0, 0, 0, 0.17) 0px 12px 13px,
-                      rgba(0, 0, 0, 0.09) 0px -3px 5px;
-                  }
+                  background-color: rgba(200, 200, 200, 0.5);
                 }
               }
               @include mobile-only {
@@ -126,18 +131,39 @@ html {
             height: 100%;
           }
           @include bp-tablet-lg {
-            padding: 0 1.5rem 0 1.5rem;
+            padding: 0
+          }
+          &.row {
+            &.mob {
+              max-width: 80%;
+              margin: 0 auto;
+
+              a {
+                &.Home {
+                  font-weight: 400;
+                  font-size: 1.5rem;
+                }
+              }
+            }
           }
         }
         @include mobile-only {
           min-height: 4.5rem;
           padding: 0;
         }
+        &.row {
+          position: absolute;
+          top: 0;
+          
+        }
       }
-    }
-
-    .Home-page {
-      padding-top: 6rem;
+      .Content {
+        @include desktop-only {
+          position: relative;
+          bottom: 200px;
+        }
+      }
+      
     }
     .image-gallery {
       .image-gallery-right-nav {
@@ -218,11 +244,10 @@ html {
       }
     }
     .Main-page {
-      margin-top: 3rem;
       margin-bottom: 1rem;
-      padding-top: 5rem;
+      padding-top: 3rem;
       @include mobile-only {
-        padding-top: 5rem;
+        padding-top: 3rem;
       }
       h3 {
         font-weight: bold;
@@ -231,6 +256,9 @@ html {
       }
       .Map {
         align-self: center;
+        display: flex;
+        justify-content: center;
+        min-height: 9rem;
         iframe {
           min-width: 100%;
           min-height: 18rem;
@@ -274,24 +302,57 @@ html {
       .Form-submitted {
         text-align: center;
       }
-      .Form-submitted-message {
-      }
-
       .Back-to-form {
+        background-color: #FFFFFF;
+        border: 1px solid #222222;
+        border-radius: 8px;
+        box-sizing: border-box;
+        color: #222222;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        margin: 0;
+        outline: none;
+        padding: 13px 23px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        touch-action: manipulation;
+        transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+        user-select: none;
+        -webkit-user-select: none;
+        width: auto;
+        &:hover,
+        &:focus {
+          border-color: rgba(0, 0, 0, 0.15);
+          box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+          color: rgba(0, 0, 0, 0.65);
+        }
       }
     }
-    .Footer {
-      min-height: 2rem;
-      background-color: #648591;
-      position: absolute;
-      bottom: 0;
-      display: flex;
-      justify-content: center;
 
-      .Copyright {
-        align-self: center;
+    .footer-container {
+        position: absolute; 
+        bottom: 0; 
+        width: 100%;
+        margin: 0 auto;
+
+      .Footer {
+        min-height: 2rem;
+        background-color: #648591;
+        display: flex;
+        justify-content: center;
+  
+        .Copyright {
+          align-self: center;
+        }
       }
+
     }
+    
   }
 }
 
