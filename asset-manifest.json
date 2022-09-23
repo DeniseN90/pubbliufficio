@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.d5e3389b.css",
-    "main.js": "/static/js/main.caae8f2e.js",
+    "main.css": "/static/css/main.a4d70650.css",
+    "main.js": "/static/js/main.67881255.js",
     "static/js/787.cafdf0c4.chunk.js": "/static/js/787.cafdf0c4.chunk.js",
-    "static/media/pubbliufficio-logo-menu.png": "/static/media/pubbliufficio-logo-menu.48bcb5e5c633961a0754.png",
-    "static/media/pubbliufficio-logo-mobile.png": "/static/media/pubbliufficio-logo-mobile.82e4426f7e6e9a36abdd.png",
+    "static/media/pubbliufficio-logo-menu.png": "/static/media/pubbliufficio-logo-menu.de86f9c42ff7d48fbf87.png",
+    "static/media/pubbliufficio-logo-mobile.png": "/static/media/pubbliufficio-logo-mobile.74ffec640359a8c58827.png",
     "index.html": "/index.html",
-    "main.d5e3389b.css.map": "/static/css/main.d5e3389b.css.map",
-    "main.caae8f2e.js.map": "/static/js/main.caae8f2e.js.map",
+    "main.a4d70650.css.map": "/static/css/main.a4d70650.css.map",
+    "main.67881255.js.map": "/static/js/main.67881255.js.map",
     "787.cafdf0c4.chunk.js.map": "/static/js/787.cafdf0c4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5e3389b.css",
-    "static/js/main.caae8f2e.js"
+    "static/css/main.a4d70650.css",
+    "static/js/main.67881255.js"
   ]
 }
