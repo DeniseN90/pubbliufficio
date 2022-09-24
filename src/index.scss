@@ -57,8 +57,11 @@ html {
       }
       
       .Header {
-    
-        .Menu {
+        margin: 0 auto;
+
+        .Header {
+         max-width: 80%;
+         .Menu {
           align-items: center;
           align-content: center;
           font-size: 1.2rem;
@@ -148,6 +151,11 @@ html {
             }
           }
         }
+
+
+        }
+    
+        
         @include mobile-only {
           min-height: 4.5rem;
           padding: 0;
@@ -155,6 +163,8 @@ html {
         &.row {
           position: absolute;
           top: 0;
+          width: 100%;
+          margin: 0 auto;
           
         }
       }
