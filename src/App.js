@@ -11,7 +11,7 @@ import LeNostreLavorazioni from "./components/LeNostreLavorazioni";
 import Footer from "./components/Footer";
 import Contattaci from "./components/Contattaci";
 import { useSelector } from "react-redux";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { CSSTransition, SwitchTransition} from "react-transition-group";
 import React, { useEffect, useRef } from "react";
 
 
@@ -78,12 +78,9 @@ export function Content() {
   
   return (
     <div className="row Content" ref={scrollRef}>
-      <TransitionGroup 
-        
+      <SwitchTransition
         className="container">
-          
         <CSSTransition
-          timeout={2000}
           classNames="fade"
           key={location.key}
           nodeRef={nodeRef} 
@@ -100,7 +97,7 @@ export function Content() {
           </Routes>
           </div>
         </CSSTransition>
-      </TransitionGroup>
+      </SwitchTransition>
     </div>
   );
 }
