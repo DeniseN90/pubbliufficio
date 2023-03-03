@@ -18,6 +18,7 @@ function Contattaci() {
   useEffect(() => {
     
     dispatch(setIsFormSubmitted(false));
+    console.log(process.env);
     const scriptURL = process.env.REACT_APP_SCRIPT_URL;
     const form = document.forms["pubbliufficio-form"];
     form.addEventListener("submit", (e) => {
