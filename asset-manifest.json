@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.c65f6aee.css",
-    "main.js": "/static/js/main.f9614f1c.js",
+    "main.js": "/static/js/main.5f39ff34.js",
     "static/js/787.cafdf0c4.chunk.js": "/static/js/787.cafdf0c4.chunk.js",
     "static/media/pubbliufficio-logo-menu.png": "/static/media/pubbliufficio-logo-menu.de86f9c42ff7d48fbf87.png",
     "static/media/pubbliufficio-logo-mobile.png": "/static/media/pubbliufficio-logo-mobile.74ffec640359a8c58827.png",
     "index.html": "/index.html",
     "main.c65f6aee.css.map": "/static/css/main.c65f6aee.css.map",
-    "main.f9614f1c.js.map": "/static/js/main.f9614f1c.js.map",
+    "main.5f39ff34.js.map": "/static/js/main.5f39ff34.js.map",
     "787.cafdf0c4.chunk.js.map": "/static/js/787.cafdf0c4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c65f6aee.css",
-    "static/js/main.f9614f1c.js"
+    "static/js/main.5f39ff34.js"
   ]
 }
