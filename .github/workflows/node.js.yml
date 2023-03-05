@@ -45,7 +45,9 @@ jobs:
       run: npm test
 
     - name: Build
-      run: npm run build
+      run: |
+        ls -la  
+        npm run build
     
     - name: Deploy your app to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
