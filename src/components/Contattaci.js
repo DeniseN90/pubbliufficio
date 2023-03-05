@@ -16,12 +16,11 @@ function Contattaci() {
   };
 
 
-  const submitForm = () => {
-    dispatch(setIsFormSubmitted(false));
+  const submitForm = (e) => {
+    e.preventDefault();
     const scriptURL = process.env.REACT_APP_SCRIPT_URL;
     const form = document.forms["pubbliufficio-form"];
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+
       fetch(scriptURL, { method: "POST", body: new FormData(form) })
         .then((response) => {
           console.log("Success!", response);
@@ -30,14 +29,13 @@ function Contattaci() {
           setContatto("");
         })
         .catch((error) => console.error("Error!", error.message));
-    });
 
   }
 
   return (
     <div className="container Main-page">
       {!isFormSubmitted && (
-        <form name="pubbliufficio-form" onSubmit={submitForm}>
+        <form name="pubbliufficio-form">
           <label>Contatto</label>
           <input
             required
@@ -54,7 +52,7 @@ function Contattaci() {
             onChange={handleChange}
           ></textarea>
 
-          <input className="submit-button mt-4" type="submit" value="Invia" />
+          <input className="submit-button mt-4" type="submit" value="Invia" onClick={(e) => submitForm(e)}/>
         </form>
       )}
       {isFormSubmitted && (
@@ -65,7 +63,7 @@ function Contattaci() {
           <div>
             <button
               className="Back-to-form mt-4"
-              type="submit"
+              onClick={() => dispatch(setIsFormSubmitted(false))}
             >
               Torna al form
             </button>

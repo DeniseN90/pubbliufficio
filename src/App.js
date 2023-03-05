@@ -84,6 +84,7 @@ export function Content() {
           classNames="fade"
           key={location.key}
           nodeRef={nodeRef} 
+          timeout={9}
         >
           <div ref={nodeRef}>
           <Routes location={location}>
