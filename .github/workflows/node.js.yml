@@ -27,8 +27,8 @@ jobs:
     
     - name: Generate .env file
       run:  |
-        echo ${{ secrets.REACT_APP_SCRIPT_URL }}
-        echo ${{ secrets.REACT_APP_SCRIPT_URL }} > .env
+        echo $SCRIPT_URL
+        echo $SCRIPT_URL > .env
         cat .env
         ls -la
       shell: bash
