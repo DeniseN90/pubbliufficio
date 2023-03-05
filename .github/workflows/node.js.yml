@@ -27,10 +27,7 @@ jobs:
     
     - name: Generate .env file
       run:  |
-        echo $SCRIPT_URL
         echo $SCRIPT_URL > .env
-        cat .env
-        ls -la
       shell: bash
     
     - name: setup git config
@@ -46,7 +43,6 @@ jobs:
 
     - name: Build
       run: |
-        ls -la  
         npm run build
     
     - name: Deploy your app to GitHub Pages
