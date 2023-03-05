@@ -27,7 +27,7 @@ jobs:
     
     - name: Generate .env file
       run:  |
-        echo $SCRIPT_URL > .env
+        echo ${{ secrets.SCRIPT_URL }} > .env
       shell: bash
     
     - name: setup git config
