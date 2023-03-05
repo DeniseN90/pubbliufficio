@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsFormSubmitted } from "../redux/pubbliufficio-store";
 
@@ -15,8 +15,8 @@ function Contattaci() {
       : setMessaggio(event.currentTarget.value);
   };
 
-  useEffect(() => {
-    
+
+  const submitForm = () => {
     dispatch(setIsFormSubmitted(false));
     console.log(process.env);
     const scriptURL = process.env.REACT_APP_SCRIPT_URL;
@@ -32,12 +32,13 @@ function Contattaci() {
         })
         .catch((error) => console.error("Error!", error.message));
     });
-  }, [dispatch]);
+
+  }
 
   return (
     <div className="container Main-page">
       {!isFormSubmitted && (
-        <form name="pubbliufficio-form">
+        <form name="pubbliufficio-form" onSubmit={submitForm}>
           <label>Contatto</label>
           <input
             required
@@ -65,7 +66,7 @@ function Contattaci() {
           <div>
             <button
               className="Back-to-form mt-4"
-              onClick={() => dispatch(setIsFormSubmitted(false))}
+              type="submit"
             >
               Torna al form
             </button>
